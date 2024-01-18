@@ -30,6 +30,7 @@ const FlightsForm = () => {
 
     const handleDepartureDateChange = (date) => {
         setDepartureDate(date);
+        setArrivingDate(null)
     };
 
     const handleArrivingDateChange = (date) => {
@@ -62,7 +63,7 @@ const FlightsForm = () => {
                 {/* Departure Date */}
                 <DatePickerComponent nameId={departureDatePickerName} label={departureDatePickerLabel} selected={departureDate} onChange={handleDepartureDateChange} />
                 {/* Arrival Date */}
-                <DatePickerComponent nameId={destinationDatePickerName} label={destinationDatePickerLabel} selected={arrivingDate} onChange={handleArrivingDateChange} />
+                <DatePickerComponent nameId={destinationDatePickerName} label={destinationDatePickerLabel} selected={arrivingDate} onChange={handleArrivingDateChange} minDate={departureDate} />
                 {/* Checkbox for one direction flights */}
                 <FlightDirectionCheckbox label={flightDirectionCheckboxLabel} checked={oneDirection} onChange={handleOneDirectionChange} />
                 {/* Passenger count and form submit button */}
