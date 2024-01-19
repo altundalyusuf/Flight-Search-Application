@@ -18,7 +18,7 @@ const DatePickerComponent = ({ nameId, label, selected, onChange, minDate }) => 
 
     return (
         <>
-            <div>
+            <div className='w-max'>
                 <label htmlFor={nameId} className="block font-medium mb-2">
                     {label}
                 </label>

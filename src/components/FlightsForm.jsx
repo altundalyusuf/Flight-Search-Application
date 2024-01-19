@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import AirportInput from './AirportInput';
-import constants from '../constants';
+import constants from '../mock/constants';
 import DatePickerComponent from './DatePickerComponent';
 import FlightDirectionCheckbox from './FlightDirectionCheckbox';
 import PassengerCount from './PassengerCount';
@@ -9,8 +9,8 @@ import PassengerCount from './PassengerCount';
 
 const FlightsForm = () => {
     // States
-    const [departure, setDeparture] = useState('');
-    const [destination, setDestination] = useState('');
+    const [departure, setDeparture] = useState(null);
+    const [destination, setDestination] = useState(null);
     const [departureDate, setDepartureDate] = useState(null);
     const [arrivingDate, setArrivingDate] = useState(null);
     const [passengerCount, setPassengerCount] = useState(1);
@@ -20,31 +20,25 @@ const FlightsForm = () => {
     const { departureInputLabel, departureInputName, destinationInputLabel, destinationInputName, departureDatePickerName, departureDatePickerLabel, destinationDatePickerName, destinationDatePickerLabel, flightDirectionCheckboxLabel, passengerCountLabel } = constants;
 
     // Handle Functions
-    const handleDepartureChange = (e) => {
-        setDeparture(e.target.value);
+    const handleDepartureChange = (selectedAirport) => {
+        setDeparture(selectedAirport);
     };
-
-    const handleDestinationChange = (e) => {
-        setDestination(e.target.value);
+    const handleDestinationChange = (selectedAirport) => {
+        setDestination(selectedAirport);
     };
-
     const handleDepartureDateChange = (date) => {
         setDepartureDate(date);
         setArrivingDate(null)
     };
-
     const handleArrivingDateChange = (date) => {
         setArrivingDate(date);
     };
-
     const handlePassengerCountIncrease = () => {
         setPassengerCount((prevCount) => prevCount + 1);
     };
-
     const handlePassengerCountDecrease = () => {
         setPassengerCount((prevCount) => Math.max(prevCount - 1, 1));
     };
-
     const handleOneDirectionChange = (e) => {
         setOneDirection(e.target.checked);
     };
