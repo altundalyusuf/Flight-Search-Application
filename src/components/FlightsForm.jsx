@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { saveFormData, increasePassengerCount, decreasePassengerCount } from '../redux-toolkit/slices/formDataSlice';
 import AirportInput from './AirportInput';
 import constants from '../mock/constants';
 import DatePickerComponent from './DatePickerComponent';
@@ -8,43 +10,48 @@ import PassengerCount from './PassengerCount';
 
 
 const FlightsForm = () => {
-    // States
-    const [departure, setDeparture] = useState(null);
-    const [destination, setDestination] = useState(null);
-    const [departureDate, setDepartureDate] = useState(null);
-    const [arrivingDate, setArrivingDate] = useState(null);
-    const [passengerCount, setPassengerCount] = useState(1);
-    const [oneDirection, setOneDirection] = useState(false);
+    // Global State
+    const formData = useSelector((state) => state.formData)
+    const dispatch = useDispatch()
+    const { departure, destination, departureDate, returnDate, isReturnDisabled, oneDirection, passengerCount } = formData;
+
+    // Navigation
+    const navigate = useNavigate();
 
     // Constant names from the constants file
     const { departureInputLabel, departureInputName, destinationInputLabel, destinationInputName, departureDatePickerName, departureDatePickerLabel, destinationDatePickerName, destinationDatePickerLabel, flightDirectionCheckboxLabel, passengerCountLabel } = constants;
 
     // Handle Functions
     const handleDepartureChange = (selectedAirport) => {
-        setDeparture(selectedAirport);
+        dispatch(saveFormData({ ...formData, departure: selectedAirport }))
     };
     const handleDestinationChange = (selectedAirport) => {
-        setDestination(selectedAirport);
+        dispatch(saveFormData({ ...formData, destination: selectedAirport }))
     };
     const handleDepartureDateChange = (date) => {
-        setDepartureDate(date);
-        setArrivingDate(null)
+        dispatch(saveFormData({ ...formData, departureDate: date, returnDate: null }))
     };
-    const handleArrivingDateChange = (date) => {
-        setArrivingDate(date);
+    const handleReturnDateChange = (date) => {
+        dispatch(saveFormData({ ...formData, returnDate: date }))
     };
     const handlePassengerCountIncrease = () => {
-        setPassengerCount((prevCount) => prevCount + 1);
+        dispatch(increasePassengerCount());
     };
     const handlePassengerCountDecrease = () => {
-        setPassengerCount((prevCount) => Math.max(prevCount - 1, 1));
+        dispatch(decreasePassengerCount())
     };
     const handleOneDirectionChange = (e) => {
-        setOneDirection(e.target.checked);
+        dispatch(saveFormData({ ...formData, oneDirection: e.target.checked, isReturnDisabled: e.target.checked, returnDate: null }))
     };
 
     const handleSearch = () => {
         // Perform search logic here
+        if (departure && destination && departureDate && (oneDirection || returnDate)) {
+            dispatch(saveFormData({ departure, destination, departureDate, returnDate, passengerCount, oneDirection, isReturnDisabled }))
+            navigate('/flights');
+        } else {
+            alert('Lütfen tüm alanları doldurun!');
+        }
     };
 
     return (
@@ -56,8 +63,10 @@ const FlightsForm = () => {
                 <AirportInput nameId={destinationInputName} label={destinationInputLabel} value={destination} onChange={handleDestinationChange} />
                 {/* Departure Date */}
                 <DatePickerComponent nameId={departureDatePickerName} label={departureDatePickerLabel} selected={departureDate} onChange={handleDepartureDateChange} />
-                {/* Arrival Date */}
-                <DatePickerComponent nameId={destinationDatePickerName} label={destinationDatePickerLabel} selected={arrivingDate} onChange={handleArrivingDateChange} minDate={departureDate} />
+                {/* Return Date */}
+                {isReturnDisabled ? null :
+                    <DatePickerComponent nameId={destinationDatePickerName} label={destinationDatePickerLabel} selected={returnDate} onChange={handleReturnDateChange} minDate={departureDate} disable={isReturnDisabled} />
+                }
                 {/* Checkbox for one direction flights */}
                 <FlightDirectionCheckbox label={flightDirectionCheckboxLabel} checked={oneDirection} onChange={handleOneDirectionChange} />
                 {/* Passenger count and form submit button */}

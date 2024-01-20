@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
 import WelcomingContainer from "../components/WelcomingContainer";
 import SearchFlights from "../components/SearchFlights";
 
 const HomePage = () => {
-    const [isVisible, setIsVisible] = useState(true);
+    const isFormVisible = useSelector((state) => state.formData.isFormVisible)
     return (
         <>
             {/* Break home page into 4 columns */}
@@ -14,8 +14,8 @@ const HomePage = () => {
                 <div className="col-span-2 flex flex-col justify-center items-center">
                     <div>
                         {
-                            isVisible ?
-                                <WelcomingContainer setIsVisible={setIsVisible} />
+                            !isFormVisible ?
+                                <WelcomingContainer />
                                 :
                                 <SearchFlights />
                         }

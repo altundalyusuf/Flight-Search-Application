@@ -25,9 +25,10 @@ const DatePickerComponent = ({ nameId, label, selected, onChange, minDate }) => 
                 <div className="relative">
                     <DatePicker
                         id={nameId}
+                        placeholderText='Tarih Giriniz'
                         selected={selected}
                         onChange={onChange}
-                        minDate={minDate} // User shouldn't select an older date for arrival date than departure date
+                        minDate={minDate} // User shouldn't select an older date for return date than departure date
                         filterDate={isDateValid}
                         className="w-full p-2 border border-gray-300 rounded-md text-black pr-10 ps-4 hover:cursor-pointer"
                     />

@@ -5,7 +5,7 @@ const constants = {
     departureDatePickerLabel: 'Gidiş Tarihi',
     destinationInputName: 'destination',
     destinationInputLabel: 'Nereye',
-    destinationDatePickerName: 'arrivingDate',
+    destinationDatePickerName: 'returnDate',
     destinationDatePickerLabel: 'Dönüş Tarihi',
     flightDirectionCheckboxLabel: 'Tek Yön',
     passengerCountLabel: 'Yolcu Sayısı',

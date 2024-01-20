@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { makeFormVisible } from '../redux-toolkit/slices/formDataSlice.js';
 
-const WelcomingContainer = ({ setIsVisible }) => {
+const WelcomingContainer = () => {
+    const dispatch = useDispatch();
     const hidePanel = () => {
-        setIsVisible(false)
+        dispatch(makeFormVisible(true));
     }
     return (
         <>
@@ -14,9 +16,5 @@ const WelcomingContainer = ({ setIsVisible }) => {
         </>
     )
 }
-
-WelcomingContainer.propTypes = {
-    setIsVisible: PropTypes.func.isRequired,
-};
 
 export default WelcomingContainer;

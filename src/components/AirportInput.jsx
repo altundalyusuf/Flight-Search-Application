@@ -21,7 +21,7 @@ const AirportInput = ({ nameId, label, value, onChange }) => {
             <label htmlFor={nameId} className="block font-medium mb-2">
                 {label}
             </label>
-            <Select placeholder='Seçiniz' id={nameId} name={nameId} value={value} onChange={(selectedOption) => onChange(selectedOption)} options={airports} className='text-black' />
+            <Select placeholder='Havalimanı Adı' id={nameId} name={nameId} value={value} onChange={(selectedOption) => onChange(selectedOption)} options={airports} className='text-black' />
         </>
     );
 };
