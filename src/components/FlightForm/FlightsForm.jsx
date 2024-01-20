@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveFormData, increasePassengerCount, decreasePassengerCount } from '../redux-toolkit/slices/formDataSlice';
+import { saveFormData, increasePassengerCount, decreasePassengerCount } from '../../redux-toolkit/slices/formDataSlice';
 import AirportInput from './AirportInput';
-import constants from '../mock/constants';
+import constants from '../../constants';
 import DatePickerComponent from './DatePickerComponent';
 import FlightDirectionCheckbox from './FlightDirectionCheckbox';
 import PassengerCount from './PassengerCount';
@@ -61,8 +61,14 @@ const FlightsForm = () => {
     const handleSearch = () => {
         // When submitting form
         if (departure && destination && departureDate && (oneDirection || returnDate)) {
+            const formData = { departure, destination, departureDate, returnDate, passengerCount, oneDirection, isReturnDisabled };
+
             // Save on Redux Toolkit
-            dispatch(saveFormData({ departure, destination, departureDate, returnDate, passengerCount, oneDirection, isReturnDisabled }))
+            dispatch(saveFormData(formData))
+
+            // Veriyi Session Storage'a eklemek
+            sessionStorage.setItem('selectedFormData', JSON.stringify(formData));
+
             // Navigate to flights page
             navigate('/flights');
         } else {

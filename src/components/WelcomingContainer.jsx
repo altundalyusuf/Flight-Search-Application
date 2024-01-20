@@ -1,11 +1,21 @@
 import { useDispatch } from 'react-redux';
-import { makeFormVisible } from '../redux-toolkit/slices/formDataSlice.js';
+import { resetFormData, toggleFormVisibility } from '../redux-toolkit/slices/formDataSlice.js';
+import { useEffect } from 'react';
 
 const WelcomingContainer = () => {
     const dispatch = useDispatch();
     const hidePanel = () => {
-        dispatch(makeFormVisible(true));
+        dispatch(toggleFormVisibility(true));
     }
+
+    useEffect(() => {
+        // If welcoming container rendered then remove the data from session storage
+        sessionStorage.removeItem('selectedFormData');
+        // Reset redux and form's initial values
+        dispatch(resetFormData())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
         <>
             <div className='flex flex-col justify-center items-center text-center bg-slate-800 p-8 md:pt-14 md:px-14 rounded-md animate-fadeInOneHalfSec'>

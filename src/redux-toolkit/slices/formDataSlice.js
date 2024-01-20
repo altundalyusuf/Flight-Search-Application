@@ -24,7 +24,16 @@ export const formDataSlice = createSlice({
             state.oneDirection = action.payload.oneDirection;
             state.passengerCount = action.payload.passengerCount;
         },
-        makeFormVisible: (state, action) => {
+        resetFormData: (state) => {
+            state.departure = null;
+            state.destination = null;
+            state.departureDate = null;
+            state.returnDate = null;
+            state.isReturnDisabled = false;
+            state.oneDirection = false;
+            state.passengerCount = 1;
+        },
+        toggleFormVisibility: (state, action) => {
             state.isFormVisible = action.payload;
         },
         increasePassengerCount: (state) => {
@@ -37,6 +46,6 @@ export const formDataSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { saveFormData, makeFormVisible, increasePassengerCount, decreasePassengerCount } = formDataSlice.actions
+export const { saveFormData, resetFormData, toggleFormVisibility, increasePassengerCount, decreasePassengerCount } = formDataSlice.actions
 
 export default formDataSlice.reducer

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select'
-import getAirports from '../api/getAirports';
+import getAirports from '../../api/getAirports';
 
 const AirportInput = ({ nameId, label, value, onChange }) => {
     const [airports, setAirports] = useState([]);

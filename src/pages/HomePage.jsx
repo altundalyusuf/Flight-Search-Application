@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import WelcomingContainer from "../components/WelcomingContainer";
-import SearchFlights from "../components/SearchFlights";
+import SearchFlights from "../components/FlightForm/SearchFlights";
 
 const HomePage = () => {
     const isFormVisible = useSelector((state) => state.formData.isFormVisible)
