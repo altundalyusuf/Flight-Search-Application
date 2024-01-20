@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { saveFormData, increasePassengerCount, decreasePassengerCount } from '../redux-toolkit/slices/formDataSlice';
 import AirportInput from './AirportInput';
 import constants from '../mock/constants';
 import DatePickerComponent from './DatePickerComponent';
 import FlightDirectionCheckbox from './FlightDirectionCheckbox';
 import PassengerCount from './PassengerCount';
-
 
 
 const FlightsForm = () => {
@@ -44,13 +45,29 @@ const FlightsForm = () => {
         dispatch(saveFormData({ ...formData, oneDirection: e.target.checked, isReturnDisabled: e.target.checked, returnDate: null }))
     };
 
+    // Toastify notification
+    const notify = () => {
+        toast.warn('Lütfen tüm alanları doldurun!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+    }
     const handleSearch = () => {
-        // Perform search logic here
+        // When submitting form
         if (departure && destination && departureDate && (oneDirection || returnDate)) {
+            // Save on Redux Toolkit
             dispatch(saveFormData({ departure, destination, departureDate, returnDate, passengerCount, oneDirection, isReturnDisabled }))
+            // Navigate to flights page
             navigate('/flights');
         } else {
-            alert('Lütfen tüm alanları doldurun!');
+            // If all of the inputs are not filled, show a toast notification
+            notify()
         }
     };
 
@@ -72,6 +89,8 @@ const FlightsForm = () => {
                 {/* Passenger count and form submit button */}
                 <PassengerCount label={passengerCountLabel} passengerCount={passengerCount} onIncrease={handlePassengerCountIncrease} onDecrease={handlePassengerCountDecrease} handleSearch={handleSearch} />
             </form>
+            {/* Toast if inputs are not filled when submitting */}
+            <ToastContainer />
         </div>
     );
 };
