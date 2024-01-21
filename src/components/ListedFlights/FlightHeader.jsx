@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { LuArrowRightLeft } from "react-icons/lu";
 import formatDate from "../../helpers/formatDate.js";
+import sky3 from "../../assets/sky3.jpeg";
+import sky4 from "../../assets/sky4.jpeg";
 
 const FlightHeader = () => {
     const [selectedFormData, setSelectedFormData] = useState(null)
@@ -15,7 +17,7 @@ const FlightHeader = () => {
 
             {selectedFormData && (
                 <div className="rounded flex justify-between bg-sky-400 bg-repeat">
-                    <img src="/src/assets/sky4.jpeg" alt="sky image 4" className="max-h-52 rounded-e-full" />
+                    <img src={sky4} className="max-h-52 rounded-e-full" />
                     <div className="text-white flex flex-col justify-center text-center">
                         <h2 className="text-3xl pb-3">{selectedFormData.departure.label}</h2>
                         <div className="flex justify-center">
@@ -31,7 +33,7 @@ const FlightHeader = () => {
                             }
                         </div>
                     </div>
-                    <img src="/src/assets/sky3.jpeg" alt="sky image 3" className="max-h-52 rounded-s-full" />
+                    <img src={sky3} alt="sky image 3" className="max-h-52 rounded-s-full" />
                 </div>
             )}
         </>

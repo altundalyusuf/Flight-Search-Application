@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { toggleFormVisibility } from "../redux-toolkit/slices/formDataSlice";
+import flyingLogo from "/src/assets/flying-logo.png";
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -14,7 +15,7 @@ const Navbar = () => {
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 {/* Logo and Brand */}
                 <div onClick={handleClick} className="border-x-8 px-3 hover:cursor-pointer rounded-full flex items-center animate-fadeInOneSec">
-                    <img src="/src/assets/flying-logo.png" alt="Logo" className="h-10 w-10 mr-2" />
+                    <img src={flyingLogo} alt="Logo" className="h-10 w-10 mr-2" />
                     <div className="text-white font-bold hover:text-slate-200 text-xl">Uçuş Yanında</div>
                 </div>
                 {/* NavLinks */}
