@@ -6,10 +6,6 @@ Bu projenin amacı, bir uçuş arama uygulaması için frontend application geli
 
 ## Proje Hakkında
 Projenin temel amacı bir uçuş arama uygulaması gerçeklemek olsa da, göründüğünden çok daha eğitici ve zorlu bir proje olduğunu söyleyebilirim. Bu projeyi geliştirirken birçok yeni araç kullandım, yeni teknolojiler öğrendim ve zorlu sorunları çözdüm. 
-## Demo
-
-Proje Canlı Linki: https://ucus-yaninda.netlify.app
-
   
 ## Özellikler
 

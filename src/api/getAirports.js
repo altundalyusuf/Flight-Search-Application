@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function getAirports() {
     try {
-        const response = await axios.get('https://altundalyusuf.github.io/flight-search-api/airports.json');
+        const response = await axios.get('http://localhost:3000/airports');
         // Format the data according to react-select library rules
         const formattedResult = response.data.map(airport => ({
             value: airport.code,
