@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     isFormVisible: false,
+    sortingName: '',
     departure: null,
     destination: null,
     departureDate: null,
@@ -42,10 +43,13 @@ export const formDataSlice = createSlice({
         decreasePassengerCount: (state) => {
             state.passengerCount = Math.max(state.passengerCount - 1, 1);
         },
+        setSortingName: (state, action) => {
+            state.sortingName = action.payload;
+        }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { saveFormData, resetFormData, toggleFormVisibility, increasePassengerCount, decreasePassengerCount } = formDataSlice.actions
+export const { saveFormData, resetFormData, toggleFormVisibility, increasePassengerCount, decreasePassengerCount, setSortingName } = formDataSlice.actions
 
 export default formDataSlice.reducer

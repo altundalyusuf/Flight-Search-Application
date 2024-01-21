@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select'
 import getAirports from '../../api/getAirports';
+import filterOption from '../../helpers/filterOption';
+
 
 const AirportInput = ({ nameId, label, value, onChange }) => {
     const [airports, setAirports] = useState([]);
@@ -21,7 +23,16 @@ const AirportInput = ({ nameId, label, value, onChange }) => {
             <label htmlFor={nameId} className="block font-medium mb-2">
                 {label}
             </label>
-            <Select placeholder='Havalimanı Adı' id={nameId} name={nameId} value={value} onChange={(selectedOption) => onChange(selectedOption)} options={airports} className='text-black' />
+            <Select
+                placeholder='Havalimanı Adı'
+                id={nameId}
+                name={nameId}
+                value={value}
+                onChange={(selectedOption) => onChange(selectedOption)}
+                options={airports}
+                className='text-black'
+                filterOption={filterOption}
+            />
         </>
     );
 };

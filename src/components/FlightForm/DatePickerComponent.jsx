@@ -2,6 +2,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaCalendarAlt } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import tr from 'date-fns/locale/tr'; // Türkçe dil desteği
 
 
 const DatePickerComponent = ({ nameId, label, selected, onChange, minDate }) => {
@@ -30,6 +31,7 @@ const DatePickerComponent = ({ nameId, label, selected, onChange, minDate }) => 
                         onChange={onChange}
                         minDate={minDate} // User shouldn't select an older date for return date than departure date
                         filterDate={isDateValid}
+                        locale={tr}
                         className="w-full p-2 border border-gray-300 rounded-md text-black pr-10 ps-4 hover:cursor-pointer"
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
