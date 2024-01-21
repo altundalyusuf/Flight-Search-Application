@@ -12,7 +12,7 @@ const HomePage = () => {
             {/* Break home page into 4 columns */}
             <div className="grid grid-cols-4 bg-sky-300 bg-repeat" style={{ backgroundImage: `url(${plane_background})` }}>
                 {/* Left column of the home page */}
-                <div className=" bg-left bg-cover rounded-r-full animate-fadeInTwoSec" style={{ backgroundImage: `url('/src/assets/flying-theme-background.jpeg')` }}></div>
+                <div className=" bg-left bg-cover rounded-r-full animate-fadeInTwoSec" style={{ backgroundImage: `url(${flyingThemeBackground})` }}></div>
                 {/* Middle column of the home page (2 span columns) */}
                 <div className="col-span-2 flex flex-col justify-center items-center">
                     <div>
