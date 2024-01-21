@@ -12,18 +12,22 @@ const FlightCards = ({ flights, reverseHeader, isLoading }) => {
     const [selectedFormData, setSelectedFormData] = useState(null)
     const { sortingName } = useSelector(state => state.formData);
 
+    // Get session storage data for comparing the flight data with the selected form data
     useEffect(() => {
         const data = sessionStorage.getItem('selectedFormData');
         setSelectedFormData(JSON.parse(data));
     }, []);
 
+    // Filter the flights with the selected form data and sorting method
     const filteredFlights = filterFlightData(flights, selectedFormData, reverseHeader, sortingName);
 
     return (
         <>
+            {/* Flight Direction Heading */}
             <DirectionHeader reverseHeader={reverseHeader} />
             {isLoading ? <Loading /> :
                 <div className="bg-base-200 rounded-badge cursor-pointer">
+                    {/* Return compatible flights */}
                     {
                         filteredFlights?.length === 0 ? (
                             <NoFlightsFound />
