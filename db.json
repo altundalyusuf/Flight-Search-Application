@@ -76,9 +76,10 @@
       {
         "id": 1,
         "airline":"Pegasus",
+        "logo":"https://agm-registration.iata.org/key4register/images/client/38/images/PGS-AI%CC%87RLI%CC%87NES-LOGO-V3.png",
         "departure":{"label":"İstanbul Havalimanı (IST)","value":"IST"} ,
         "destination":{ "label":"Ankara Esenboğa Havalimanı (ESB)","value":"ESB"},
-        "departureDate": "Tue Jan 23 2024 00:00:00 GMT+0300 (GMT+03:00)",
+        "departureDate": "Tue Jan 29 2024 00:00:00 GMT+0300 (GMT+03:00)",
         "departureTime": "14.00",
         "arrivalTime":"16.15",
         "duration": "2s 15dk",
@@ -87,9 +88,10 @@
       {
         "id": 2,
         "airline":"THY",
+        "logo": "https://seeklogo.com/images/T/turkish-airlines-logo-25BACC2D0C-seeklogo.com.png",
         "departure":{ "label":"Ankara Esenboğa Havalimanı (ESB)","value":"ESB"},
         "destination":{"label":"İstanbul Havalimanı (IST)","value":"IST"} ,
-        "departureDate": "Tue Jan 23 2024 00:00:00 GMT+0300 (GMT+03:00)",
+        "departureDate": "Mon Feb 05 2024 00:00:00 GMT+0300 (GMT+03:00)",
         "departureTime": "18.00",
         "arrivalTime":"20.15",
         "duration": "2s 15dk",
@@ -98,6 +100,7 @@
       {
         "id": 3,
         "airline":"Anadolu Jet",
+        "logo":"https://w7.pngwing.com/pngs/183/408/png-transparent-anadolujet-denizli-cardak-airport-airline-ticket-logo-business-blue-text-trademark.png",
         "departure":{"label":"İstanbul Sabiha Gökçen Havalimanı (SAW)","value":"SAW"} ,
         "destination":{ "label":"Antalya Havalimanı (AYT)","value":"AYT"},
         "departureDate": "Wed Jan 31 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -107,8 +110,9 @@
         "price": "1900 TL"
       },
       {
-        "id": 33,
-        "airline":"MNG Havayolları",
+        "id": 4,
+        "airline":"THY",
+        "logo": "https://seeklogo.com/images/T/turkish-airlines-logo-25BACC2D0C-seeklogo.com.png",
         "departure":{"label":"İstanbul Sabiha Gökçen Havalimanı (SAW)","value":"SAW"} ,
         "destination":{ "label":"Antalya Havalimanı (AYT)","value":"AYT"},
         "departureDate": "Wed Jan 31 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -118,8 +122,9 @@
         "price": "1500 TL"
       },
       {
-        "id": 34,
+        "id": 5,
         "airline":"Onur Air",
+        "logo":"https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Onur_Air_logo.svg/2560px-Onur_Air_logo.svg.png",
         "departure":{"label":"İstanbul Sabiha Gökçen Havalimanı (SAW)","value":"SAW"} ,
         "destination":{ "label":"Antalya Havalimanı (AYT)","value":"AYT"},
         "departureDate": "Wed Jan 31 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -129,8 +134,9 @@
         "price": "2100 TL"
       },
       {
-        "id": 4,
+        "id": 6,
         "airline":"Anadolu Jet",
+        "logo":"https://w7.pngwing.com/pngs/183/408/png-transparent-anadolujet-denizli-cardak-airport-airline-ticket-logo-business-blue-text-trademark.png",
         "departure":{ "label":"Antalya Havalimanı (AYT)","value":"AYT"},
         "destination":{"label":"İstanbul Sabiha Gökçen Havalimanı (SAW)","value":"SAW"} ,
         "departureDate": "Fri Feb 14 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -140,8 +146,9 @@
         "price": "1990 TL"
       },
       {
-        "id": 41,
+        "id": 7,
         "airline":"Pegasus",
+        "logo":"https://agm-registration.iata.org/key4register/images/client/38/images/PGS-AI%CC%87RLI%CC%87NES-LOGO-V3.png",
         "departure":{ "label":"Antalya Havalimanı (AYT)","value":"AYT"},
         "destination":{"label":"İstanbul Sabiha Gökçen Havalimanı (SAW)","value":"SAW"} ,
         "departureDate": "Fri Feb 14 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -151,8 +158,9 @@
         "price": "2110 TL"
       },
       {
-        "id": 42,
+        "id": 8,
         "airline":"Onur Air",
+        "logo":"https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Onur_Air_logo.svg/2560px-Onur_Air_logo.svg.png",
         "departure":{ "label":"Antalya Havalimanı (AYT)","value":"AYT"},
         "destination":{"label":"İstanbul Sabiha Gökçen Havalimanı (SAW)","value":"SAW"} ,
         "departureDate": "Fri Feb 14 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -162,8 +170,9 @@
         "price": "1750 TL"
       },
       {
-        "id": 5,
+        "id": 9,
         "airline":"Pegasus",
+        "logo":"https://agm-registration.iata.org/key4register/images/client/38/images/PGS-AI%CC%87RLI%CC%87NES-LOGO-V3.png",
         "departure":{"label":"Eskişehir Hasan Polatkan Havalimanı (AOE)", "value":"AOE"} ,
         "destination":{ "label":"İzmir Adnan Menderes Havalimanı (ADB)","value":"ADB"},
         "departureDate": "Sat Mar 07 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -173,19 +182,21 @@
         "price": "1500 TL"
       },
       {
-        "id": 6,
+        "id": 10,
         "airline":"Pegasus",
+        "logo":"https://agm-registration.iata.org/key4register/images/client/38/images/PGS-AI%CC%87RLI%CC%87NES-LOGO-V3.png",
         "departure":{ "label":"İzmir Adnan Menderes Havalimanı (ADB)","value":"ADB"},
         "destination":{"label":"Eskişehir Hasan Polatkan Havalimanı (AOE)", "value":"AOE"} ,
-        "departureDate": "Sat Mar 07 2024 00:00:00 GMT+0300 (GMT+03:00)",
+        "departureDate": "Sat Mar 27 2024 00:00:00 GMT+0300 (GMT+03:00)",
         "departureTime": "19.15",
         "arrivalTime":"21.50",
         "duration": "2s 35dk",
         "price": "1600 TL"
       },
       {
-        "id": 7,
+        "id": 11,
         "airline":"THY",
+        "logo": "https://seeklogo.com/images/T/turkish-airlines-logo-25BACC2D0C-seeklogo.com.png",
         "departure":{"label":"Van Ferit Melen Havalimanı (VAN)","value":"VAN"} ,
         "destination":{ "label":"Bodrum Milas Havalimanı (BJV)","value":"BJV"},
         "departureDate": "Fri May 21 2024 00:00:00 GMT+0300 (GMT+03:00)",
@@ -195,15 +206,27 @@
         "price": "2250 TL"
       },
       {
-        "id": 8,
+        "id": 12,
         "airline":"THY",
         "departure":{ "label":"Bodrum Milas Havalimanı (BJV)","value":"BJV"},
         "destination":{"label":"Van Ferit Melen Havalimanı (VAN)","value":"VAN"} ,
-        "departureDate": "Fri May 21 2024 00:00:00 GMT+0300 (GMT+03:00)",
+        "departureDate": "Thur May 30 2024 00:00:00 GMT+0300 (GMT+03:00)",
         "departureTime": "15.00",
         "arrivalTime":"19.20",
         "duration": "4s 20dk",
         "price": "2385 TL"
+      },
+      {
+        "id": 13,
+        "airline":"Anadolu Jet",
+        "logo":"https://w7.pngwing.com/pngs/183/408/png-transparent-anadolujet-denizli-cardak-airport-airline-ticket-logo-business-blue-text-trademark.png",
+        "departure":{ "label":"Bodrum Milas Havalimanı (BJV)","value":"BJV"},
+        "destination":{"label":"Van Ferit Melen Havalimanı (VAN)","value":"VAN"} ,
+        "departureDate": "Thur May 30 2024 00:00:00 GMT+0300 (GMT+03:00)",
+        "departureTime": "11.00",
+        "arrivalTime":"14.45",
+        "duration": "3s 45dk",
+        "price": "1900 TL"
       }
     ]
 }

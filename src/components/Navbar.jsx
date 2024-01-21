@@ -15,7 +15,7 @@ const Navbar = () => {
                 {/* Logo and Brand */}
                 <div onClick={handleClick} className="border-x-8 px-3 hover:cursor-pointer rounded-full flex items-center animate-fadeInOneSec">
                     <img src="/src/assets/flying-logo.png" alt="Logo" className="h-10 w-10 mr-2" />
-                    <div className="text-white font-bold text-xl">Uçuş Yanında</div>
+                    <div className="text-white font-bold hover:text-slate-200 text-xl">Uçuş Yanında</div>
                 </div>
                 {/* NavLinks */}
                 <div className="flex flex-col md:flex-row md:space-x-4 mt-4 md:mt-0 animate-fadeInOneSec text-center">

@@ -7,7 +7,7 @@ import { setSortingName } from '../../redux-toolkit/slices/formDataSlice';
 
 const DirectionHeader = ({ reverseHeader }) => {
     const [selectedFormData, setSelectedFormData] = useState(null)
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ const DirectionHeader = ({ reverseHeader }) => {
         // Dispatch sorting type to redux store
         dispatch(setSortingName(e.target.id));
         // close dropdown
-        setOpen((open) => !open);
+        setOpen(false);
     };
     useEffect(() => {
         const data = sessionStorage.getItem('selectedFormData');
