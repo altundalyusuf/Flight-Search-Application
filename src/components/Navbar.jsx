@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { toggleFormVisibility } from "../redux-toolkit/slices/formDataSlice";
-import flyingLogo from "/src/assets/flying-logo.png";
+import flyingLogo from "/src/assets/flyingLogo.png";
 
 const Navbar = () => {
     const navigate = useNavigate();
