@@ -3,6 +3,21 @@
 
 Bu projenin amacı, bir uçuş arama uygulaması için frontend application geliştirmektir..
 
+## Uçuş Olan Tarih Aralıkları
+- 29 Ocak 2024,  İstanbul Havalimanı (IST) - Ankara Esenboğa Havalimanı (ESB)
+- 31 Ocak 2024, İstanbul Sabiha Gökçen Havalimanı (SAW) - Antalya Havalimanı (AYT) 
+- 31 Ocak 2024, İstanbul Sabiha Gökçen Havalimanı (SAW)- Antalya Havalimanı (AYT)
+- 31 Ocak 2024, İstanbul Sabiha Gökçen Havalimanı (SAW)- Antalya Havalimanı (AYT)
+- 5 Şubat 2024, Ankara Esenboğa Havalimanı (ESB) - İstanbul Havalimanı (IST)
+- 14 Şubat 2024, Antalya Havalimanı (AYT) - İstanbul Sabiha Gökçen Havalimanı (SAW)
+- 14 Şubat 2024, Antalya Havalimanı (AYT) - İstanbul Sabiha Gökçen Havalimanı (SAW)
+- 14 Şubat 2024, Antalya Havalimanı (AYT) - İstanbul Sabiha Gökçen Havalimanı (SAW)
+- 7 Mart 2024, Eskişehir Hasan Polatkan Havalimanı (AOE) -İzmir Adnan Menderes Havalimanı (ADB)
+- 27 Mart 2024, İzmir Adnan Menderes Havalimanı (ADB) - Eskişehir Hasan Polatkan Havalimanı (AOE)
+- 21 Mayıs 2024, Van Ferit Melen Havalimanı (VAN) - Bodrum Milas Havalimanı (BJV)
+- 30 Mayıs 2024, Bodrum Milas Havalimanı (BJV) - Van Ferit Melen Havalimanı (VAN)
+- 30 Mayıs 2024, Bodrum Milas Havalimanı (BJV) - Van Ferit Melen Havalimanı (VAN)
+
 
 ## Proje Hakkında
 Projenin temel amacı bir uçuş arama uygulaması gerçeklemek olsa da, göründüğünden çok daha eğitici ve zorlu bir proje olduğunu söyleyebilirim. Bu projeyi geliştirirken birçok yeni araç kullandım, yeni teknolojiler öğrendim ve zorlu sorunları çözdüm. 
@@ -84,6 +99,7 @@ Frontend tarafını çalıştırın
 ```bash
   npm run dev
 ```
+
 
   
 ## Ekran Görüntüleri
