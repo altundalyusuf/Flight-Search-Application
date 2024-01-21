@@ -4,8 +4,10 @@ export function getTimeInMinutes(time) {
 }
 
 export function getDurationInMinutes(duration) {
-    const [hours, minutes] = duration.split('s').map(str => Number(str.trim()));
-    return hours * 60 + minutes;
+    const [hours, minutes] = duration.split('s').map(str => str.trim());
+    const hoursInMinutes = parseInt(hours) * 60;
+    const minutesWithoutSuffix = parseInt(minutes.replace('dk', ''));
+    return hoursInMinutes + minutesWithoutSuffix;
 }
 
 export function getPriceAsNumber(price) {
